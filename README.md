@@ -16,10 +16,6 @@ Or install it yourself as:
 
     $ gem install space2underscore
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Contributing
 
 1. Fork it
