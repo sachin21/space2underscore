@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sachin21.developer@gmail.com"]
   spec.description   = "Convert to underscore the space"
   spec.summary       = "Convert to underscore the space"
-  spec.homepage      = "Convert to underscore the space"
+  spec.homepage      = ""
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
