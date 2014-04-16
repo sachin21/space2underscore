@@ -2,6 +2,5 @@
 
 require 'space2underscore'
 
-result = Space2underscore.convert_to_underscore(ARGV[0])
-puts result.first
-result.last
+result = Space2underscore.convert_to_underscore(ARGV)
+puts result.first; result.last
