@@ -2,12 +2,8 @@ require "space2underscore/version"
 
 module Space2underscore
   def self.convert_to_underscore(argv)
-    if argv
-      space_include = argv.gsub(/\s/, '_')
-      copy_command = `echo #{space_include} | ruby -pe 'chomp' | pbcopy`
-      return space_include, copy_command
-    else
-      raise "Error! Please enter string"
-    end
+    space_include_sentence = argv.length == 1 ? argv.first.gsub(/\s/,  '_') : argv.join('_')
+    copy_command = `echo #{space_include_sentence} | ruby -pe 'chomp' | pbcopy`
+    return space_include_sentence, copy_command
   end
 end
