@@ -1,4 +1,4 @@
-require "space2underscore/version"
+require 'space2underscore/version'
 
 module Space2underscore
   def self.convert_to_underscore(argv)
