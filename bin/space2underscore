@@ -3,4 +3,4 @@
 require 'space2underscore'
 
 result = Space2underscore.convert_to_underscore(ARGV)
-puts result.first; result.last
+puts result.first; system(result.last)
