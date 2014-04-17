@@ -16,6 +16,23 @@ Or install it yourself as:
 
     $ gem install space2underscore
 
+If your computer is linux
+
+    $ sudo apt-get install xclip
+
+You need alias
+
+    $ alias pbcopy='xclip -selection clipboard'
+  
+    $ alias pbpaste='xclip -selection clipboard -o'
+
+## How to use
+
+From the terminal:
+
+    $ space2underscore target sentence
+    => target_sentence  # copied to the clipboard
+
 ## Contributing
 
 1. Fork it
@@ -23,3 +40,4 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
