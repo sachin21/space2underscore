@@ -2,5 +2,6 @@
 
 require 'space2underscore'
 
-result = Space2underscore.convert_to_underscore(ARGV)
-puts result.first; system(result.last)
+result  = Space2underscore.convert_to_underscore(ARGV)
+command = Space2underscore.copy_command(result)
+puts result.first; system(command)
