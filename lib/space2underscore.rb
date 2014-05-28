@@ -2,7 +2,7 @@ require 'space2underscore/version'
 
 module Space2underscore
   def self.convert(argv)
-    argv.length == 1 ? argv[0].gsub(/\s/,  '_') : argv.join('_')
+    argv.length == 1 ? argv[0].strip.gsub(/\s/,  '_') : argv.join('_')
   end
 
   def self.copy_command(space_include_sentence)
