@@ -26,7 +26,7 @@ You need alias
 
     $ alias pbpaste='xclip -selection clipboard -o'
 
-## How to use
+## Usage
 
 From the terminal:
 
