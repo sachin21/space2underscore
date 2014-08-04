@@ -20,7 +20,7 @@ If your computer is linux
 
     $ sudo apt-get install xclip
 
-You need alias
+You need to alias
 
     $ alias pbcopy='xclip -selection clipboard'
 
