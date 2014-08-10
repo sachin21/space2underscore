@@ -7,6 +7,6 @@ describe Space2underscore do
   end
 
   it 'Successful copied' do
-    expect(Space2underscore.copy_command('fuga_hoge_foo')).to eq("echo fuga_hoge_foo | ruby -pe 'chomp' | pbcopy")
+    expect(Space2underscore.generate_command('fuga_hoge_foo')).to eq("echo fuga_hoge_foo | ruby -pe 'chomp' | pbcopy")
   end
 end
