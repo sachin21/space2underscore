@@ -3,5 +3,5 @@
 require 'space2underscore'
 
 result  = Space2underscore.convert(ARGV)
-command = Space2underscore.copy_command(result)
+command = Space2underscore.generate_command(result)
 puts result; system(command)
