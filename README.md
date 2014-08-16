@@ -16,15 +16,17 @@ Or install it yourself as:
 
     $ gem install space2underscore
 
-If your computer is linux
+If your computer is Ubuntu
 
     $ sudo apt-get install xclip
 
+If your computer is CentOS
+
+    $ sudo yum -y install xclip
+
 You need to alias
 
-    $ alias pbcopy='xclip -selection clipboard'
-
-    $ alias pbpaste='xclip -selection clipboard -o'
+    $ alias pbcopy='xsel --clipboard --input'
 
 ## Usage
 
