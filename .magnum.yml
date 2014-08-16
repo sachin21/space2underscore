@@ -1,0 +1,26 @@
+ruby: 2.1.2
+ruby: 2.1.1
+ruby: 2.1.0
+ruby: 1.9.3-p547
+ruby: 1.9.3-p392
+ruby: 1.9.3-p429
+ruby: 1.9.3-p448
+ruby: 1.9.3-p484
+ruby: 1.9.3-p545
+
+before_install:
+  - rvm install 2.1.2
+  - rvm install 2.1.1
+  - rvm install 2.1.0
+  - rvm install 1.9.3-p547
+  - rvm install 1.9.3-p392
+  - rvm install 1.9.3-p429
+  - rvm install 1.9.3-p448
+  - rvm install 1.9.3-p484
+  - rvm install 1.9.3-p545
+
+install:
+  - bundle install --path=./vendor/bundle
+
+script:
+  - ./bin/rspec
