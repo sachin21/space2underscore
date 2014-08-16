@@ -23,4 +23,4 @@ install:
   - bundle install --path=./vendor/bundle
 
 script:
-  - ./bin/rspec
+  - bundle exec rspec
