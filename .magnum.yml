@@ -24,3 +24,20 @@ install:
 
 script:
   - bundle exec rspec
+  - rvm use 2.1.2
+  - bundle exec rspec
+  - rvm use 2.1.1
+  - bundle exec rspec
+  - rvm use 2.1.0
+  - bundle exec rspec
+  - rvm use 1.9.3-p547
+  - bundle exec rspec
+  - rvm use 1.9.3-p392
+  - bundle exec rspec
+  - rvm use 1.9.3-p429
+  - bundle exec rspec
+  - rvm use 1.9.3-p448
+  - bundle exec rspec
+  - rvm use 1.9.3-p484
+  - bundle exec rspec
+  - rvm use 1.9.3-p545
