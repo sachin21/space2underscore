@@ -18,11 +18,11 @@ Or install it yourself as:
 
 If your computer is Ubuntu
 
-    $ sudo apt-get install xclip
+    $ sudo apt-get install xsel
 
 If your computer is CentOS
 
-    $ sudo yum -y install xclip
+    $ sudo yum -y install xsel
 
 You need to alias
 
