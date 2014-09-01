@@ -1,6 +1,6 @@
 # Space2underscore
 ## What
-Convert to underscore the space
+Change the space into underscore.
 
 ## Installation
 
