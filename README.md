@@ -35,6 +35,15 @@ From the terminal:
     $ space2underscore target sentence
     => target_sentence  # copied to the clipboard
 
+# Example of use
+
+![example of use](https://raw.githubusercontent.com/sachin21/space2underscore/master/img/screenshot.png)
+
+From the terminal:
+
+    $ space2underscore add stock function to user feeed
+    $ git checkout -b add_stock_function_to_user_feeed
+
 ## Contributing
 
 1. Fork it
