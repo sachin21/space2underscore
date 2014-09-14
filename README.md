@@ -41,8 +41,8 @@ From the terminal:
 
 From the terminal:
 
-    $ space2underscore add stock function to user feeed
-    $ git checkout -b add_stock_function_to_user_feeed
+    $ space2underscore add stock function to user feeed # copied to clipboard
+    $ git checkout -b add_stock_function_to_user_feeed # paste
 
 ## Contributing
 
