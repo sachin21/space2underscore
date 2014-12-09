@@ -1,4 +1,5 @@
 require 'space2underscore/version'
+require 'mkmf'
 
 module Space2underscore
   class << self
