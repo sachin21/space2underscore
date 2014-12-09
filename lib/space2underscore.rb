@@ -7,7 +7,13 @@ module Space2underscore
     end
 
     def generate_command(space_include_sentence)
-      "echo #{space_include_sentence} | ruby -pe 'chomp' | pbcopy"
+      if find_executable("pbcopy")
+        "echo #{space_include_sentence} | ruby -pe 'chomp' | pbcopy"
+      elsif find_executable("xsel")
+        "echo #{space_include_sentence} | ruby -pe 'chomp' | xsel --input --clipboard"
+      elsif find_executable("xclip")
+        "echo #{space_include_sentence} | ruby -pe 'chomp' | xclip"
+      end
     end
   end
 end
