@@ -24,10 +24,6 @@ If your computer is CentOS
 
     $ sudo yum -y install xsel
 
-You need to alias
-
-    $ alias pbcopy='xsel --clipboard --input'
-
 ## Usage
 
 From the terminal:
