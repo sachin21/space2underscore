@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe Space2underscore do
-  it 'Successful execution' do
+  it 'should be Successful execution' do
     expect(Space2underscore.convert(['fuga hoge foo'])).to include('_') # String case
     expect(Space2underscore.convert(%w(fuga hoge foo))).to include('_') # Array case
   end
 
-  it 'Successful copied' do
+  it 'should be Successful copied' do
     expect(Space2underscore.generate_command('fuga_hoge_foo')).to eq("echo fuga_hoge_foo | ruby -pe 'chomp' | pbcopy")
   end
 end
