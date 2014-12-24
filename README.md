@@ -37,7 +37,7 @@ From the terminal:
 
 # Example of use
 
-![example of use](https://raw.githubusercontent.com/sachin21/space2underscore/master/img/screenshot.png)
+![example of use](http://i.imgur.com/7RwtlGe.png)
 
 From the terminal:
 
