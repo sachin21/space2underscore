@@ -6,8 +6,8 @@ module Space2underscore
       argv.length == 1 ? argv[0].strip.gsub(/\s/,  '_') : argv.join('_')
     end
 
-    def generate_command(space_include_sentence)
-      "echo #{space_include_sentence} | ruby -pe 'chomp' | #{copy_cmd}"
+    def generate_command(underscore_include_sentence)
+      "echo #{underscore_include_sentence} | ruby -pe 'chomp' | #{copy_cmd}"
     end
 
     def copy_cmd
