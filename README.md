@@ -16,11 +16,11 @@ Or install it yourself as:
 
     $ gem install space2underscore
 
-If your computer is Ubuntu
+If your computer is Ubuntu then
 
     $ sudo apt-get install xsel
 
-If your computer is CentOS
+If your computer is CentOS then
 
     $ sudo yum -y install xsel
 
