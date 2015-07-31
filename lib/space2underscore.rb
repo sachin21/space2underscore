@@ -19,5 +19,17 @@ module Space2underscore
         "xclip"
       end
     end
+
+    def create_new_branch(branch)
+      print "Do you create the new branch? [y/Y]"
+      flag = $stdin.gets.chomp
+
+      if flag == "y" || flag == "Y"
+        system "git checkout -b #{branch}"
+        "Branch has been created."
+      else
+        "Branch name has been copied to clipboard."
+      end
+    end
   end
 end
