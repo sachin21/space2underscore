@@ -1,6 +1,7 @@
 # Space2underscore
-## What
+## What is space2underscore
 Change the space into underscore.
+space2underscore is a useful command when you want to check out a branch.
 
 ## Installation
 
@@ -28,8 +29,9 @@ If your computer is CentOS then
 
 From the terminal:
 
-    $ space2underscore target sentence
-    => target_sentence  # copied to the clipboard
+    $ space2underscore new branch
+    =>  Switched to the new branch 'new_branch’
+    =>  Branch has been created.
 
 # Example of use
 
@@ -47,4 +49,3 @@ From the terminal:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
