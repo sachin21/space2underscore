@@ -3,6 +3,4 @@
 require 'space2underscore'
 
 result  = Space2underscore.convert(ARGV)
-command = Space2underscore.generate_command(result)
 puts Space2underscore.create_new_branch(result)
-system(command)
