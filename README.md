@@ -1,6 +1,7 @@
 # Space2underscore
 ## What is space2underscore
 Change the space into underscore.
+
 space2underscore is a useful command when you want to check out a branch.
 
 ## Installation
