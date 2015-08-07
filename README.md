@@ -34,15 +34,6 @@ From the terminal:
     =>  Switched to the new branch 'new_branch’
     =>  Branch has been created.
 
-# Example of use
-
-![example of use](http://i.imgur.com/1teIk4j.png)
-
-From the terminal:
-
-    $ space2underscore add stock function to user feed # underscore included branch name is copied to clipboard
-    $ git checkout -b add_stock_function_to_user_feed # paste
-
 ## Contributing
 
 1. Fork it
