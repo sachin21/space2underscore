@@ -10,6 +10,10 @@ module Space2underscore
       "echo #{underscore_include_sentence} | ruby -pe 'chomp' | #{copy_cmd}"
     end
 
+    def execute_command(command)
+      system command
+    end
+
     def copy_cmd
       if system("type pbcopy > /dev/null 2>&1")
         "pbcopy"
@@ -20,14 +24,16 @@ module Space2underscore
       end
     end
 
-    def create_new_branch(branch)
+    def create_new_branch(underscore_include_sentence)
       print "Do you create the new branch? [y/Y]"
       flag = $stdin.gets.chomp
 
       if flag == "y" || flag == "Y"
-        system "git checkout -b #{branch}"
+        system "git checkout -b #{underscore_include_sentence}"
         "Branch has been created."
       else
+        execute_command(generate_command(underscore_include_sentence))
+
         "Branch name has been copied to clipboard."
       end
     end
