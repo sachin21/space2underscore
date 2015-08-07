@@ -31,6 +31,7 @@ If your computer is CentOS then
 From the terminal:
 
     $ space2underscore new branch
+    => Do you create the new branch? [y/Y] # y
     =>  Switched to the new branch 'new_branch’
     =>  Branch has been created.
 
