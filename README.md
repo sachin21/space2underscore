@@ -35,6 +35,13 @@ From the terminal:
     =>  Switched to the new branch 'new_branch’
     =>  Branch has been created.
 
+Or
+
+    $ space2underscore new branch
+    => Do you create the new branch? [y/Y/Yes, n/N/No] # n
+    => Branch name has been copied to clipboard.
+    $ git branch -m new_branch # Paste from clipboard
+
 ## Contributing
 
 1. Fork it
