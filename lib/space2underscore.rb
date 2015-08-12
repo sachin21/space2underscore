@@ -25,7 +25,7 @@ module Space2underscore
     end
 
     def create_new_branch(underscore_include_sentence)
-      print "Do you create the new branch? [y/Y]"
+      print "Do you create the new branch? [y/Y/Yes, n/N/No]"
       flag = $stdin.gets.chomp
 
       if !!(flag =~ /^y(es)?$/i) || flag == ''
