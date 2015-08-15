@@ -37,10 +37,10 @@ From the terminal:
 
 Or
 
-    $ space2underscore new branch
+    $ space2underscore renamed branch
     => Do you create the new branch? [y/Y/Yes, n/N/No] # n
     => Branch name has been copied to clipboard.
-    $ git branch -m new_branch # Paste from clipboard
+    $ git branch -m renamed_branch # Paste from clipboard
 
 ## Contributing
 
