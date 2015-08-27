@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 require 'space2underscore'
 
-args = ARGV.reject { |arg| /-c|--create/ === arg }
+CREATE_FLAGS = %w(-c --create)
+
+args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
 result  = Space2underscore.convert(args)
 
 if ARGV.include?('-c') || ARGV.include?('--create')
