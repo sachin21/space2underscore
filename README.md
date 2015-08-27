@@ -18,8 +18,7 @@ From the terminal:
 
 Or
 
-    $ space2underscore renamed branch
-    => renamed_branch # Output to the standard output
+    $ git branch -m $(space2underscore renamed branch) # Output to the standard output
 
 ## Contributing
 
