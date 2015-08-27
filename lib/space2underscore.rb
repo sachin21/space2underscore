@@ -28,7 +28,7 @@ module Space2underscore
       print "Do you create the new branch? [y/Y/Yes, n/N/No]"
       flag = $stdin.gets.chomp
 
-      if !!(flag =~ /^y(es)?$/i) || flag == ''
+      if /^y(es)?$/ === flag || flag == ''
         system "git checkout -b #{underscore_include_sentence}"
         "Branch has been created."
       else
