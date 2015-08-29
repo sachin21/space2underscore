@@ -7,9 +7,7 @@ module Space2underscore
     end
 
     def create_new_branch(underscore_include_sentence)
-      if system "git checkout -b #{underscore_include_sentence}"
-        "Branch has been created."
-      end
+      system "git checkout -b #{underscore_include_sentence}"
     end
   end
 end
