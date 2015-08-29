@@ -7,7 +7,7 @@ args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
 result  = Space2underscore.convert(args)
 
 if ARGV.include?('-c') || ARGV.include?('--create')
-  print Space2underscore.create_new_branch(result)
+  Space2underscore.create_new_branch(result)
 else
   print result
 end
