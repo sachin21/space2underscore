@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby
-
 require 'space2underscore'
 
-result  = Space2underscore.convert(ARGV)
-puts Space2underscore.create_new_branch(result)
+CREATE_FLAGS = %w(-c --create)
+
+args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
+result  = Space2underscore.convert(args)
+
+if ARGV.include?('-c') || ARGV.include?('--create')
+  Space2underscore.create_new_branch(result)
+else
+  print result
+end

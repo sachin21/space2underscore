@@ -1,46 +1,24 @@
 # Space2underscore
 ## What is space2underscore
 Change the space into underscore.
-
 space2underscore is a useful command when you want to check out a branch.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'space2underscore'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install space2underscore
-
-If your computer is Ubuntu then
-
-    $ sudo apt-get install xsel
-
-If your computer is CentOS then
-
-    $ sudo yum -y install xsel
 
 ## Usage
 
 From the terminal:
 
-    $ space2underscore new branch
-    => Do you create the new branch? [y/Y/Yes, n/N/No] # y
+    $ space2underscore new branch -c
     =>  Switched to the new branch 'new_branch’
     =>  Branch has been created.
 
 Or
 
-    $ space2underscore renamed branch
-    => Do you create the new branch? [y/Y/Yes, n/N/No] # n
-    => Branch name has been copied to clipboard.
-    $ git branch -m renamed_branch # Paste from clipboard
+    $ git branch -m $(space2underscore renamed branch) # Output to the standard output
 
 ## Contributing
 

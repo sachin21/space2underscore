@@ -5,8 +5,4 @@ describe Space2underscore do
     expect(Space2underscore.convert(['fuga hoge foo'])).to include('_') # String case
     expect(Space2underscore.convert(%w(fuga hoge foo))).to include('_') # Array case
   end
-
-  it 'should be Successful copied' do
-    expect(Space2underscore.generate_command('fuga_hoge_foo')).to eq("echo fuga_hoge_foo | ruby -pe 'chomp' | pbcopy")
-  end
 end
