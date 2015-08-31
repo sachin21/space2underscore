@@ -18,6 +18,29 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
+  spec.post_install_message = %q{
+    __________________________________________________________
+    ..........................................................
+    __________________________________________________________
+
+    Thank you for installing space2underscore.
+
+    ************************* Usage **************************
+
+    From the terminal:
+
+    $ space2underscore new branch -c
+    =>  Switched to the new branch 'new_branch’
+
+    Or
+
+    $ git branch -m $(space2underscore renamed branch) # Output to the standard output
+
+    ----------------------------------------------------------
+    ..........................................................
+    __________________________________________________________
+  }
+
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
