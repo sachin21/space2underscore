@@ -14,7 +14,6 @@ From the terminal:
 
     $ space2underscore new branch -c
     =>  Switched to the new branch 'new_branch’
-    =>  Branch has been created.
 
 Or
 
