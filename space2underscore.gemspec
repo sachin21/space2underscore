@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
 
     Or
 
-    $ git branch -m $(space2underscore renamed branch) # Output to the standard output
+    $ git branch -m $(space2underscore renamed branch) # space2underscore has outputted to the standard output.
 
     ----------------------------------------------------------
     ..........................................................
