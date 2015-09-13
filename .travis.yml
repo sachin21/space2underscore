@@ -1,0 +1,17 @@
+language: ruby
+
+rvm:
+  - 2.1.2
+  - 2.1.1
+  - 2.1.0
+  - 1.9.3-p547
+  - 1.9.3-p392
+  - 1.9.3-p429
+  - 1.9.3-p448
+  - 1.9.3-p484
+  - 1.9.3-p545
+
+script: "bundle exec rspec spec"
+
+notifications:
+  slack: sachin21dev:3pEyff2UFnoCgl4NI0uxbsER
