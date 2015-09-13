@@ -9,15 +9,32 @@ Install it yourself as:
     $ gem install space2underscore
 
 ## Usage
-
 From the terminal:
 
-    $ space2underscore new branch -c
-    =>  Switched to the new branch 'new_branch’
+### 1. e.g. Create the new branch
 
-Or
+```
+$ space2underscore new branch -c
+=>  Switched to the new branch 'new_branch’
+```
 
-    $ git branch -m $(space2underscore renamed branch) # Output to the standard output
+Run with `--create` or `-c` options.
+
+### 2. e.g. Rename the already created a branch
+ 
+```
+$ git branch -m $(space2underscore renamed branch)
+```
+
+When option is nothing, space2underscore has outputted to the standard output.
+
+## Shorthand
+
+A shorthand alias for space2underscore can also be used.
+
+```
+s2u new branch
+```
 
 ## Contributing
 
