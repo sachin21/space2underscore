@@ -1,4 +1,5 @@
-# Space2underscore
+# Space2underscore [![Build Status](https://travis-ci.org/sachin21/space2underscore.svg?branch=master)](https://travis-ci.org/sachin21/space2underscore)
+
 ## What is space2underscore
 Change the space into underscore.
 space2underscore is a useful command when you want to check out a branch.
@@ -21,7 +22,7 @@ $ space2underscore new branch -c
 Run with `--create` or `-c` options.
 
 ### 2. e.g. Rename the already created a branch
- 
+
 ```
 $ git branch -m $(space2underscore renamed branch)
 ```
