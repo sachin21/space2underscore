@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Space2underscore::VERSION
   spec.authors       = ['sachin21']
   spec.email         = ['sachin21.developer@gmail.com']
-  spec.description   = 'change the space into underscore'
-  spec.summary       = 'change the space into underscore'
+  spec.description   = 'Change the space into underscore'
+  spec.summary       = 'Change the space into underscore'
   spec.homepage      = 'http://github.com/sachin21/space2underscore'
   spec.license       = 'MIT'
 
