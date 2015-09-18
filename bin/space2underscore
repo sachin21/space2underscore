@@ -6,8 +6,12 @@ CREATE_FLAGS = %w(-c --create)
 args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
 result  = Space2underscore.convert(args)
 
-if ARGV.include?('-c') || ARGV.include?('--create')
-  Space2underscore.create_new_branch(result)
+if ARGV.empty?
+  Space2underscore.print_usage
 else
-  print result
+  if ARGV.include?('-c') || ARGV.include?('--create')
+    Space2underscore.create_new_branch(result)
+  else
+    print result
+  end
 end
