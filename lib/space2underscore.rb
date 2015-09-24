@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'space2underscore/version'
 
 module Space2underscore
