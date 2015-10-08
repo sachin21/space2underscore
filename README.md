@@ -37,6 +37,9 @@ A shorthand alias for space2underscore can also be used.
 s2u new branch
 ```
 
+## Credits
+- Help information based on [@motemen's ghq](https://github.com/motemen/ghq)
+
 ## Contributing
 
 1. Fork it
