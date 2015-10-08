@@ -12,15 +12,22 @@ module Space2underscore
 
   def self.print_usage
     message = <<-EOF
-      space2underscore #{Space2underscore::VERSION}
-      Usage: space2underscore <branch name> <options>
+      NAME:
+         space2underscore - Change the space into underscore
 
-      $ space2underscore new branch -c # Run with `--create` or `-c` options.
-      =>  Switched to the new branch 'new_branch’
+      USAGE:
+         $ space2underscore new branch -c
+         =>  Switched to the new branch 'new_branch’
 
-      Or
+        Or
 
-      $ git branch -m $(space2underscore renamed branch) # space2underscore has outputted to the standard output.
+        $ git branch -m $(space2underscore renamed branch)
+
+      VERSION:
+         #{Space2underscore::VERSION}
+
+      OPTIONS:
+         --create, -c         create the new branch
     EOF
 
     print message.gsub('      ', '')
