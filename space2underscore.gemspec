@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.post_install_message = %q{
-    __________________________________________________________
     ..........................................................
     __________________________________________________________
 
@@ -34,11 +33,10 @@ Gem::Specification.new do |spec|
 
     Or
 
-    $ git branch -m $(space2underscore renamed branch) # space2underscore has outputted to the standard output.
+    $ git branch -m $(space2underscore renamed branch)
 
     ----------------------------------------------------------
     ..........................................................
-    __________________________________________________________
   }[1..-1]
 
   spec.add_development_dependency 'bundler', '~> 1.3'
