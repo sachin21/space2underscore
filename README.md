@@ -39,6 +39,7 @@ s2u new branch
 
 ## Credits
 - Help information based on [@motemen's ghq](https://github.com/motemen/ghq)
+- Installed information based on [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
 
 ## Contributing
 
