@@ -10,7 +10,7 @@ Install it yourself as:
     $ gem install space2underscore
 
 ## Usage
-From the terminal:
+From the command line:
 
 ### 1. e.g. Create the new branch
 
