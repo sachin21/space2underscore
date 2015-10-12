@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
 
     ************************* Usage **************************
 
-    From the terminal:
+    From the command line:
 
     $ space2underscore new branch -c
     =>  Switched to the new branch 'new_branch’
