@@ -1,4 +1,4 @@
-# Space2underscore [![Gem Version](https://badge.fury.io/rb/space2underscore.svg)] [![Build Status](https://travis-ci.org/sachin21/space2underscore.svg?branch=master)](https://travis-ci.org/sachin21/space2underscore) [![Code Climate](https://codeclimate.com/github/sachin21/space2underscore/badges/gpa.svg)](https://codeclimate.com/github/sachin21/space2underscore)
+# Space2underscore ![Gem Version](https://badge.fury.io/rb/space2underscore.svg) [![Build Status](https://travis-ci.org/sachin21/space2underscore.svg?branch=master)](https://travis-ci.org/sachin21/space2underscore) [![Code Climate](https://codeclimate.com/github/sachin21/space2underscore/badges/gpa.svg)](https://codeclimate.com/github/sachin21/space2underscore)
 
 ## What is space2underscore
 Change the space into underscore.
