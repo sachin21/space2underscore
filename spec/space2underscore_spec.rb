@@ -41,4 +41,14 @@ describe Space2underscore do
       end
     end
   end
+
+  describe '.usage' do
+    it 'returns string' do
+      expect(Space2underscore.usage).to be_a(String)
+    end
+
+    it 'does not return an blank string does' do
+      expect(Space2underscore.usage).not_to be_nil
+    end
+  end
 end
