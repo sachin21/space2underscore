@@ -10,7 +10,7 @@ module Space2underscore
     system "git checkout -b #{underscore_include_sentence}"
   end
 
-  def self.print_usage
+  def self.usage
     message = <<-EOF
       NAME:
          space2underscore - Change the space into underscore
@@ -30,6 +30,6 @@ module Space2underscore
          --create, -c         create the new branch
     EOF
 
-    print message.gsub('      ', '')
+    message.gsub('      ',  '')
   end
 end
