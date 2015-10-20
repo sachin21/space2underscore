@@ -6,8 +6,8 @@ describe Space2underscore do
 
   describe '.convert' do
     it 'returns underscore included in string' do
-      expect(Space2underscore.convert(['foo bar'])).to include(branch_name)
-      expect(Space2underscore.convert(%w(foo bar))).to include(branch_name)
+      expect(Space2underscore.convert(['foo bar'])).to include('_')
+      expect(Space2underscore.convert(%w(foo bar))).to include('_')
     end
   end
 
