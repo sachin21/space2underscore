@@ -30,6 +30,6 @@ module Space2underscore
          --create, -c         create the new branch
     EOF
 
-    message.gsub('      ',  '')
+    message.gsub('      ', '')
   end
 end
