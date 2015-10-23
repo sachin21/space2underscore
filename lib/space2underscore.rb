@@ -11,7 +11,7 @@ module Space2underscore
   end
 
   def self.usage
-    message = <<-EOF
+    message = <<-EOF.chomp
       NAME:
          space2underscore - Change the space into underscore
 
