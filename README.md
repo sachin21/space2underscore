@@ -9,7 +9,9 @@ space2underscore is a useful command when you want to check out a branch.
 ## Installation
 Install it yourself as:
 
-    $ gem install space2underscore
+```
+$ gem install space2underscore
+```
 
 ## Usage
 From the command line:
