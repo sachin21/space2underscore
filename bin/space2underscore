@@ -21,4 +21,4 @@ result =
     end
   end
 
-print result
+puts result
