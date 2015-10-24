@@ -1,5 +1,22 @@
 # Change log
 
+## v0.3.7
+- Added gems for coverage and use COVERALLS and SimpleCov.
+- Wrote configurations for COVERALLS and SimpleCov.
+- Hid git command's result.
+- Modified methods specifications.
+- Wrote spec for .create_new_branch and .usage.
+- Changed print method from print to puts.
+- Added badges.
+- Fixed typos.
+
+## v0.3.6 (2015-10-16)
+- Wrote CHANGELOG.md.
+- Rewrote docs.
+- Added credits for ghq and tmuxinator.
+- Modified the help information.
+- Modified the information to be printed after the installation is completed.
+
 ## v0.3.5 (2015-10-07)
 - Removed line feed code in first line.
 
