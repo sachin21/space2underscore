@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Space2underscore do
   let(:branch_name) { 'foo_bar' }
-  let(:hidden) { '> /dev/null 2>&1'}
+  let(:hidden) { '&> /dev/null'}
 
   describe '.convert' do
     it 'returns underscore included in string' do
