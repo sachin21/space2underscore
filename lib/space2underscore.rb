@@ -7,7 +7,7 @@ module Space2underscore
   end
 
   def self.create_new_branch(underscore_include_sentence)
-    system "git checkout -b #{underscore_include_sentence} > /dev/null 2>&1"
+    system "git checkout -b #{underscore_include_sentence} &> /dev/null"
   end
 
   def self.usage
