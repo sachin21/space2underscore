@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
     From the command line:
 
-    $ space2underscore new branch -c
+    $ s2u new branch -c
     =>  Switched to the new branch 'new_branch’
 
     Or
