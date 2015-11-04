@@ -11,7 +11,7 @@ rvm:
   - 1.9.3-p484
   - 1.9.3-p545
 
-script: "bundle exec rspec spec"
+script: "bundle exec rake spec:with_coveralls"
 
 notifications:
   slack: sachin21dev:3pEyff2UFnoCgl4NI0uxbsER
