@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# coding: utf-8
+
 require 'space2underscore'
 
 CREATE_FLAGS = %w(-c --create)

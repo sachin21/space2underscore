@@ -1,17 +1,9 @@
 # coding: utf-8
 require 'space2underscore/version'
 
+# This is the main functions.
 module Space2underscore
-  def self.convert(argv)
-    argv.length == 1 ? argv[0].strip.gsub(/\s/,  '_') : argv.join('_')
-  end
-
-  def self.create_new_branch(underscore_include_sentence)
-    system "git checkout -b #{underscore_include_sentence} &> /dev/null"
-  end
-
-  def self.usage
-    message = <<-EOF.chomp
+  MESSAGE = <<-EOF.chomp
       NAME:
          space2underscore - Change the space into underscore
 
@@ -28,8 +20,17 @@ module Space2underscore
 
       OPTIONS:
          --create, -c         create the new branch
-    EOF
+  EOF
 
-    message.gsub('      ', '')
+  def self.convert(argv)
+    argv.length == 1 ? argv[0].strip.gsub(/\s/, '_') : argv.join('_')
+  end
+
+  def self.create_new_branch(underscore_include_sentence)
+    system "git checkout -b #{underscore_include_sentence} &> /dev/null"
+  end
+
+  def self.usage
+    MESSAGE.gsub('      ', '')
   end
 end

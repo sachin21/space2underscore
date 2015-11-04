@@ -1,17 +1,21 @@
+# coding: utf-8
+
 require 'bundler/setup'
 require 'coveralls'
-Coveralls.wear!
-
 require 'space2underscore'
 require 'simplecov'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
+Coveralls.wear! if ENV['COVERALLS']
 
-SimpleCov.start do
-  add_filter '/vendor/'
+if ENV['SIMPLECOV']
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+
+  SimpleCov.start do
+    add_filter '/vendor/'
+  end
 end
 
 Bundler.setup

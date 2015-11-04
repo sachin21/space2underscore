@@ -1,8 +1,10 @@
+# coding: utf-8
+
 require 'spec_helper'
 
 describe Space2underscore do
   let(:branch_name) { 'foo_bar' }
-  let(:hidden) { '&> /dev/null'}
+  let(:hidden) { '&> /dev/null' }
 
   describe '.convert' do
     it 'returns underscore included in string' do
@@ -25,7 +27,7 @@ describe Space2underscore do
   describe '.create_new_branch' do
     after { checkout_and_remove_branch }
 
-    context "when exist a git repository" do
+    context 'when exist a git repository' do
       before { checkout_and_remove_branch }
 
       it 'creates the new branch' do
@@ -33,7 +35,7 @@ describe Space2underscore do
       end
     end
 
-    context "when exist a git repository" do
+    context 'when exist a git repository' do
       before { create_branch }
 
       it 'creates the new branch' do
