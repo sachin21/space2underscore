@@ -13,11 +13,12 @@ describe Space2underscore do
     end
   end
 
-  def checkout_and_delete_branch
-    checkout_master = "git checkout master #{hidden}"
-    delete_branch = "git branch -D #{branch_name} #{hidden}"
+  def checkout_master
+    system("git checkout master #{hidden}")
+  end
 
-    system("#{checkout_master}; #{delete_branch}")
+  def delete_branch
+    system("git branch -D #{branch_name} #{hidden}")
   end
 
   def create_branch
@@ -25,22 +26,18 @@ describe Space2underscore do
   end
 
   describe '.create_new_branch' do
-    after { checkout_and_delete_branch }
-
-    context 'when exist a git repository' do
-      before { checkout_and_delete_branch }
-
-      it 'creates the new branch' do
-        expect(Space2underscore.create_new_branch(branch_name)).to be_truthy
-      end
+    before do
+      checkout_master
+      delete_branch
     end
 
-    context 'when exist a git repository' do
-      before { create_branch }
+    after do
+      checkout_master
+      delete_branch
+    end
 
-      it 'creates the new branch' do
-        expect(Space2underscore.create_new_branch(branch_name)).to be_falsey
-      end
+    it 'creates the new branch' do
+      expect(Space2underscore.create_new_branch(branch_name)).to be_truthy
     end
   end
 
