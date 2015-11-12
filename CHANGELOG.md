@@ -1,5 +1,12 @@
 # Change log
 
+## v0.3.8
+- Refactored for hiding command results.
+- Added a task for the RSpec and SimpleCov.
+- Use Rubocop and Fix issues of Rubocop.
+- Use shorthand alias in `README.md`.
+- Modified post install message.
+
 ## v0.3.7
 - Added gems for coverage and use COVERALLS and SimpleCov.
 - Wrote configurations for COVERALLS and SimpleCov.
