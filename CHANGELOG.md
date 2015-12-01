@@ -1,5 +1,8 @@
 # Change log
 
+## v0.3.9
+- Do not use SimpleCov.
+
 ## v0.3.8
 - Refactored for hiding command results.
 - Added a task for the RSpec and SimpleCov.
