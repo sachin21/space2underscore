@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
     From the command line:
 
     $ s2u new branch -c
-    =>  Switched to the new branch 'new_branch’
+    =>  Switched to a new branch 'new_branch’
 
     Or
 
