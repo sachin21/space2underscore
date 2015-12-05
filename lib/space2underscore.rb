@@ -19,7 +19,7 @@ module Space2underscore
          #{Space2underscore::VERSION}
 
       OPTIONS:
-         --create, -c         create the new branch
+         --create, -c         create a new branch
   EOF
 
   def self.convert(argv)
