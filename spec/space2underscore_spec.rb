@@ -14,15 +14,19 @@ describe Space2underscore do
   end
 
   def checkout_master
-    system("git checkout master #{hidden}")
+    execute_command('git checkout master')
   end
 
   def delete_branch
-    system("git branch -D #{branch_name} #{hidden}")
+    execute_command("git branch -D #{branch_name}")
   end
 
   def create_branch
-    system("git branch #{branch_name} #{hidden}")
+    execute_command("git branch #{branch_name}")
+  end
+
+  def execute_command(command)
+    system("#{command} #{hidden}")
   end
 
   describe '.create_new_branch' do
