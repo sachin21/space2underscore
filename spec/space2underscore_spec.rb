@@ -46,7 +46,7 @@ describe Space2underscore do
   end
 
   describe '.usage' do
-    it 'returns string' do
+    it 'returns String class' do
       expect(Space2underscore.usage).to be_a(String)
     end
 
