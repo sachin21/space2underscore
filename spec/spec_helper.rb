@@ -1,10 +1,13 @@
 # coding: utf-8
 
 require 'bundler/setup'
-require 'coveralls'
 require 'space2underscore'
 
-Coveralls.wear! if ENV['COVERALLS']
+if ENV['COVERALLS']
+  require 'coveralls'
+  Coveralls.wear!
+end
+
 Bundler.setup
 
 RSpec.configure do |config|
