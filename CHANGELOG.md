@@ -18,7 +18,7 @@
 - Wrote configurations for COVERALLS and SimpleCov.
 - Hid git command's result.
 - Modified methods specifications.
-- Wrote spec for .create_new_branch and .usage.
+- Wrote spec for `.create_new_branch` and `.usage`.
 - Changed print method from print to puts.
 - Added badges.
 - Fixed typos.
