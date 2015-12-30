@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
 
     Or
 
-    $ git branch -m $(space2underscore renamed branch)
+    $ git branch -m $(s2u renamed branch)
 
     ----------------------------------------------------------
     ..........................................................
