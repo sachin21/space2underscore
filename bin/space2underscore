@@ -8,19 +8,12 @@ CREATE_FLAGS = %w(-c --create)
 args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
 underscore_include_sentence = Space2underscore.convert(args)
 
-result =
-  if ARGV.empty?
-    Space2underscore.usage
+if ARGV.empty?
+  puts Space2underscore.usage
+else
+  if ARGV.include?('-c') || ARGV.include?('--create')
+    Space2underscore.create_new_branch(underscore_include_sentence)
   else
-    if ARGV.include?('-c') || ARGV.include?('--create')
-      if Space2underscore.create_new_branch(underscore_include_sentence)
-        "Switched to a new branch '#{underscore_include_sentence}'"
-      else
-        "fatal: A branch named '#{underscore_include_sentence}' already exists."
-      end
-    else
-      underscore_include_sentence
-    end
+    puts underscore_include_sentence
   end
-
-puts result
+end
