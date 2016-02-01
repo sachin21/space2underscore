@@ -20,7 +20,7 @@ From the command line:
 
 ```
 $ space2underscore new branch -c
-=>  Switched to the new branch 'new_branch’
+=>  Switched to a new branch 'new_branch’
 ```
 
 Run with `--create` or `-c` options.
