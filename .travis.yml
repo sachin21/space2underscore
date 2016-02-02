@@ -11,6 +11,7 @@ rvm:
 
 before_install:
   - gem install bundler
+  - rm -f .git/index.lock
 
 script: "bundle exec rake spec:with_coveralls"
 
