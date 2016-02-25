@@ -41,7 +41,7 @@ describe Space2underscore do
     end
 
     it 'creates the new branch' do
-      expect(Space2underscore.create_new_branch(branch_name)).to be_truthy
+      expect(Space2underscore.create_new_branch(branch_name)).to eq true
     end
   end
 
