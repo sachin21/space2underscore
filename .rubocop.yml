@@ -1,6 +1,5 @@
 AllCops:
-  Exclude:
-    - 'vendor/**/*'
+  TargetRubyVersion: 2.3
 
-Style/Encoding:
-  Enabled: true
+  Exclude:
+    - 'vendor/bundle/**/*'
