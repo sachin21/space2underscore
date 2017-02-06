@@ -1,4 +1,5 @@
-# coding: utf-8
+# frozen_string_literal: true
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'space2underscore/version'
@@ -18,26 +19,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.post_install_message = <<-EOF.gsub('    ', '')
-    ..........................................................
-    __________________________________________________________
-
-    Thank you for installing space2underscore.
-
-    ************************* Usage **************************
-
-    From the command line:
-
-    $ s2u new branch -c
-    =>  Switched to a new branch 'new_branch’
-
-    Or
-
-    $ git branch -m $(s2u renamed branch)
-
-    ----------------------------------------------------------
-    ..........................................................
-  EOF
+  spec.post_install_message = File.read('post_install_message.txt')
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
