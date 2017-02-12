@@ -12,7 +12,7 @@ underscore_include_sentence = Space2underscore.convert(args)
 
 return puts Space2underscore.usage if ARGV.empty?
 
-if convert_flag.emtpy?
+if convert_flag.empty?
   puts underscore_include_sentence
 else
   Space2underscore.create_new_branch(underscore_include_sentence)
