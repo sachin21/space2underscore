@@ -1,5 +1,19 @@
 # Space2underscore Change Log
 
+## v0.4.3
+- Fix critical typo
+
+## v0.4.2
+- Fix issues according to RuboCop
+
+## v0.4.1
+- Drop test for 1.9
+
+## v0.4.0
+- Use git's original result
+- Add an alias for space2underscore
+- Add travis CI testing target for new ruby version
+
 ## v0.3.9
 - Do not use SimpleCov.
 - license file is renamed from LICENSE.txt to MIT-LICENSE.
