@@ -1,5 +1,12 @@
 # Space2underscore Change Log
 
+## v0.5.0
+- Add a task for tagging
+- Add tests for bins
+
+### Critical bug fix
+- Change the symbolic link to plain text
+
 ## v0.4.3
 - Fix critical typo
 
