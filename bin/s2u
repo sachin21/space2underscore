@@ -10,7 +10,10 @@ args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
 convert_flag = ARGV.select { |arg| CREATE_FLAGS.include?(arg) }
 underscore_include_sentence = Space2underscore.convert(args)
 
-return puts Space2underscore.usage if ARGV.empty?
+if ARGV.empty?
+  puts Space2underscore.usage
+  exit
+end
 
 if convert_flag.empty?
   puts underscore_include_sentence
