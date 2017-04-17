@@ -4,16 +4,6 @@ require 'spec_helper'
 require 'open3'
 
 describe Space2underscore do
-  let(:branch_name) { 'foo_bar' }
-  let(:hidden) { '&> /dev/null' }
-
-  describe '.convert' do
-    it 'returns underscore included in string' do
-      expect(Space2underscore.convert(['foo bar'])).to include('_')
-      expect(Space2underscore.convert(%w(foo bar))).to include('_')
-    end
-  end
-
   def checkout_master
     execute_command('git checkout master')
   end
@@ -30,6 +20,25 @@ describe Space2underscore do
     system("#{command} #{hidden}")
   end
 
+  let(:branch_name) { 'foo_bar' }
+  let(:hidden) { '&> /dev/null' }
+
+  describe '.convert' do
+    subject { Space2underscore.convert(argument) }
+
+    context 'when number of argument is one' do
+      let(:argument) { ['foo bar'] }
+
+      it { is_expected.to include('_') }
+    end
+
+    context 'when number of argument is many' do
+      let(:argument) { %w(foo bar) }
+
+      it { is_expected.to include('_') }
+    end
+  end
+
   describe '.create_new_branch' do
     before do
       checkout_master
@@ -41,25 +50,24 @@ describe Space2underscore do
       delete_branch
     end
 
-    it 'creates the new branch' do
-      expect(Space2underscore.create_new_branch(branch_name)).to eq true
+    it 'creates a new branch' do
+      expect(Space2underscore.create_new_branch(branch_name)).to be true
     end
   end
 
   describe '.usage' do
-    it 'returns String class' do
-      expect(Space2underscore.usage).to be_a(String)
-    end
+    subject { Space2underscore.usage }
 
-    it 'does not return an blank string does' do
-      expect(Space2underscore.usage).not_to be_nil
-    end
+    it { is_expected.to be_a String }
+    it { is_expected.not_to be_empty }
   end
 
   describe 'bin' do
     let(:argument1) { 'hoge' }
     let(:argument2) { 'fuga' }
+
     let(:result) { Open3.capture2(bin, argument1, argument2) }
+
     subject(:output) { result[0] }
     subject(:status) { result[1] }
 
@@ -81,6 +89,7 @@ describe Space2underscore do
       it_behaves_like 'output'
       it_behaves_like 'status'
     end
+
     context 'with s2u' do
       let(:bin) { File.join('bin', 'space2underscore') }
 
