@@ -5,7 +5,11 @@ module Space2underscore
     end
 
     def convert
-      @sentence.length == 1 ? @sentence[0].strip.gsub(/\s/, '_') : @sentence.join('_')
+      if @sentence.length == 1
+        @sentence[0].strip.gsub(/\s/, '_')
+      else
+        @sentence.join('_')
+      end
     end
   end
 end
