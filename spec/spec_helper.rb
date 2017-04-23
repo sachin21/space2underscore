@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
-require 'space2underscore'
+require 'pry'
+require_relative '../lib/space2underscore'
 
 if ENV['COVERALLS']
   require 'coveralls'
