@@ -19,7 +19,7 @@ From the command line:
 ### 1. e.g. Create the new branch
 
 ```
-$ space2underscore new branch -c
+$ s2u new branch -c
 =>  Switched to a new branch 'new_branch’
 ```
 
@@ -28,17 +28,7 @@ Run with `--create` or `-c` options.
 ### 2. e.g. Rename the already created a branch
 
 ```
-$ git branch -m $(space2underscore renamed branch)
-```
-
-When option is nothing, space2underscore has outputted to the standard output.
-
-## Shorthand
-
-A shorthand alias for space2underscore can also be used.
-
-```
-s2u new branch
+$ git branch -m $(s2u renamed branch)
 ```
 
 ## Credits

@@ -2,21 +2,5 @@
 # frozen_string_literal: true
 
 require 'space2underscore'
-require 'pry'
 
-CREATE_FLAGS = %w(-c --create).freeze
-
-args = ARGV.reject { |arg| CREATE_FLAGS.include?(arg) }
-convert_flag = ARGV.select { |arg| CREATE_FLAGS.include?(arg) }
-underscore_include_sentence = Space2underscore.convert(args)
-
-if ARGV.empty?
-  puts Space2underscore.usage
-  exit
-end
-
-if convert_flag.empty?
-  puts underscore_include_sentence
-else
-  Space2underscore.create_new_branch(underscore_include_sentence)
-end
+Space2underscore::Cli.new(ARGV).start
