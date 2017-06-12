@@ -1,5 +1,16 @@
 # Space2underscore Change Log
 
+## v0.5.2
+- Refactor methods in space2underscore.
+- Refactor examples for space2underscore.
+- Add an option for raw.
+
+### Security Changes
+- Lock the RuboCop version over `0.49.0`.
+
+## v0.5.1
+- Fix a bug where failed to print usage.
+
 ## v0.5.0
 - Add a task for tagging
 - Add tests for bins
