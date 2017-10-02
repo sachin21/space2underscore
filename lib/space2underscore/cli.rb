@@ -1,6 +1,6 @@
 module Space2underscore
   class Cli
-    CREATE_FLAGS = %w(-c --create).freeze
+    CREATE_FLAGS = %w[-c --create].freeze
 
     def initialize(argv)
       @argv = argv
@@ -13,8 +13,8 @@ module Space2underscore
         exit
       end
 
-      if included?
-        exit Executor.new(@underscore_include_sentence).create
+      if included_create_flag?
+        exit Executor.new(@underscore_include_sentence).run
       else
         $stdout.puts @underscore_include_sentence
       end
@@ -26,7 +26,7 @@ module Space2underscore
       @argv.reject { |arg| CREATE_FLAGS.include?(arg) }
     end
 
-    def included?
+    def included_create_flag?
       @argv.any? { |arg| CREATE_FLAGS.include?(arg) }
     end
   end
