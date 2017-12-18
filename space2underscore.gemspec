@@ -21,9 +21,9 @@ Gem::Specification.new do |spec|
 
   spec.post_install_message = File.read('post_install_message.txt')
 
-  spec.add_development_dependency 'bundler', '~> 1.3'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop', '< 0.49.0'
 end
