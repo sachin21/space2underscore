@@ -31,6 +31,9 @@ Run with `--create` or `-c` options.
 $ git branch -m $(s2u renamed branch)
 ```
 
+## !! Cation !!
+This is a command line tool. So DO NOT include all modules because it uses `system` command. So crackers will be attacking your application.
+
 ## Credits
 - Help information based on [@motemen's ghq](https://github.com/motemen/ghq)
 - Installed information based on [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
