@@ -1,33 +1,46 @@
 module Space2underscore
   class Cli
     CREATE_FLAGS = %w[-c --create].freeze
+    RAW_FLAGS = %w[-r --raw].freeze
+
+    FLAGS = [CREATE_FLAGS, RAW_FLAGS].flatten.freeze
+
+    OptionParseError = Class.new(ArgumentError)
 
     def initialize(argv)
       @argv = argv
-      @underscore_include_sentence = Underscore.new(sentence).convert
+      @underscore_include_branch = Underscore.new(branch).convert
     end
 
     def start
-      if @argv.empty?
-        $stdout.puts Usage.new.content
-        exit
-      end
+      $stdout.puts Usage.new.content && exit if @argv.empty?
 
-      if included_create_flag?
-        exit Executor.new(@underscore_include_sentence).run
+      case
+      when included?(CREATE_FLAGS) && included?(RAW_FLAGS)
+        Executor.new(@underscore_include_branch).run_with_raw
+      when included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
+        Executor.new(@underscore_include_branch).run_with_downcase
+      when not_included?(CREATE_FLAGS) && included?(RAW_FLAGS)
+        Printer.instance.run_with_raw(@underscore_include_branch)
+      when not_included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
+        Printer.instance.run_with_downcase(@underscore_include_branch)
       else
-        $stdout.puts @underscore_include_sentence
+        raise OptionParseError, 'Option is invalid format. It is only avaliable for `-c --create -d --downcase`'
       end
     end
 
     private
 
-    def sentence
-      @argv.reject { |arg| CREATE_FLAGS.include?(arg) }
+    def branch
+      @argv.reject { |arg| FLAGS.include?(arg) }
     end
 
-    def included_create_flag?
-      @argv.any? { |arg| CREATE_FLAGS.include?(arg) }
+    def included?(flags)
+      @argv.any? { |arg| flags.include?(arg) }
+    end
+
+    def not_included?(flags)
+      !included?(flags)
     end
   end
 end
