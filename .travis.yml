@@ -13,4 +13,5 @@ before_install:
 script: "bundle exec rake spec:with_coveralls"
 
 notifications:
+  email: false
   slack: sachin21dev:3pEyff2UFnoCgl4NI0uxbsER
