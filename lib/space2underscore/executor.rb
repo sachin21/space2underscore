@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
+require 'singleton'
+
 module Space2underscore
   class Executor
-    def initialize(underscore_include_sentence)
-      @underscore_include_sentence = underscore_include_sentence
+    include Singleton
+
+    def run_with_raw(underscore_include_sentence)
+      run underscore_include_sentence
     end
 
-    def run_with_raw
-      run @underscore_include_sentence
-    end
-
-    def run_with_downcase
-      run @underscore_include_sentence.downcase
+    def run_with_downcase(underscore_include_sentence)
+      run underscore_include_sentence.downcase
     end
 
     private

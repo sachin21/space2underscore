@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Space2underscore
   class Underscore
     def initialize(sentence)
