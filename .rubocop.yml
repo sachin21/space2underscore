@@ -4,5 +4,13 @@ AllCops:
   Exclude:
     - 'vendor/bundle/**/*'
 
+  DisplayCopNames: true
+
 Style/Documentation:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 15

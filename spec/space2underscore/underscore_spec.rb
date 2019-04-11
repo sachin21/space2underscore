@@ -14,7 +14,7 @@ describe Space2underscore::Underscore do
     end
 
     context 'when number of argument is many' do
-      let(:argument) { %w(foo bar) }
+      let(:argument) { %w[foo bar] }
 
       it { is_expected.to include('_') }
     end

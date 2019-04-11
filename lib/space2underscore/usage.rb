@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Space2underscore
   class Usage
     MESSAGE = <<-EOF.chomp
@@ -5,12 +7,12 @@ module Space2underscore
            space2underscore - Change the space into underscore
 
         USAGE:
-           $ space2underscore new branch -c
+           $ s2u new branch -c
            =>  Switched to the new branch 'new_branch’
 
           Or
 
-          $ git branch -m $(space2underscore renamed branch)
+          $ git branch -m $(s2u renamed branch)
 
         VERSION:
            #{Space2underscore::VERSION}

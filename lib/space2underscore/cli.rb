@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Space2underscore
   class Cli
     CREATE_FLAGS = %w[-c --create].freeze
@@ -5,27 +7,30 @@ module Space2underscore
 
     FLAGS = [CREATE_FLAGS, RAW_FLAGS].flatten.freeze
 
+    ERROR_MSG = 'Option is invalid format. It is only avaliable for `-c --create -d --downcase`'
+
     OptionParseError = Class.new(ArgumentError)
 
     def initialize(argv)
       @argv = argv
       @underscore_include_branch = Underscore.new(branch).convert
+      @executer = Executor.instance
+      @printer  = Printer.instance
     end
 
     def start
-      $stdout.puts Usage.new.content && exit if @argv.empty?
+      return $stdout.puts Usage.new.content if @argv.empty?
 
-      case
-      when included?(CREATE_FLAGS) && included?(RAW_FLAGS)
-        Executor.new(@underscore_include_branch).run_with_raw
-      when included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
-        Executor.new(@underscore_include_branch).run_with_downcase
-      when not_included?(CREATE_FLAGS) && included?(RAW_FLAGS)
-        Printer.instance.run_with_raw(@underscore_include_branch)
-      when not_included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
-        Printer.instance.run_with_downcase(@underscore_include_branch)
+      if with_all_flags?
+        @executer.run_with_raw(@underscore_include_branch)
+      elsif create_flags_without_raw_flags?
+        @executer.run_with_downcase(@underscore_include_branch)
+      elsif raw_flags_without_create_flags?
+        @printer.run_with_raw(@underscore_include_branch)
+      elsif without_any_flags?
+        @printer.instance.run_with_downcase(@underscore_include_branch)
       else
-        raise OptionParseError, 'Option is invalid format. It is only avaliable for `-c --create -d --downcase`'
+        raise OptionParseError, ERROR_MSG
       end
     end
 
@@ -41,6 +46,22 @@ module Space2underscore
 
     def not_included?(flags)
       !included?(flags)
+    end
+
+    def without_any_flags?
+      not_included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
+    end
+
+    def with_all_flags?
+      included?(CREATE_FLAGS) && included?(RAW_FLAGS)
+    end
+
+    def create_flags_without_raw_flags?
+      included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
+    end
+
+    def raw_flags_without_create_flags?
+      included?(RAW_FLAGS) && not_included?(CREATE_FLAGS)
     end
   end
 end
