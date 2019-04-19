@@ -28,7 +28,7 @@ module Space2underscore
       elsif raw_flags_without_create_flags?
         @printer.run_with_raw(@underscore_include_branch)
       elsif without_any_flags?
-        @printer.instance.run_with_downcase(@underscore_include_branch)
+        @printer.run_with_downcase(@underscore_include_branch)
       else
         raise OptionParseError, ERROR_MSG
       end

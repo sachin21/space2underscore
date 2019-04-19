@@ -4,8 +4,9 @@
 module Space2underscore
 end
 
-require 'space2underscore/version'
+require 'singleton'
 
+require 'space2underscore/version'
 require 'space2underscore/executor'
 require 'space2underscore/printer'
 require 'space2underscore/underscore'

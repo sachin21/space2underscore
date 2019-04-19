@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'singleton'
-
 module Space2underscore
   class Printer
     include Singleton
