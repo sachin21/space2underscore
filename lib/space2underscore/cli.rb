@@ -7,7 +7,7 @@ module Space2underscore
 
     FLAGS = [CREATE_FLAGS, RAW_FLAGS].flatten.freeze
 
-    ERROR_MSG = 'Option is invalid format. It is only avaliable for `-c --create -d --downcase`'
+    ERROR_MSG = 'Option is invalid format. It is only available for `-c --create -d --downcase`'
 
     OptionParseError = Class.new(ArgumentError)
 
