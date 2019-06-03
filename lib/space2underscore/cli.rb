@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
 module Space2underscore
+  require 'optparse'
+
   class Cli
     CREATE_FLAGS = %w[-c --create].freeze
     RAW_FLAGS = %w[-r --raw].freeze
 
     FLAGS = [CREATE_FLAGS, RAW_FLAGS].flatten.freeze
 
-    ERROR_MSG = 'Option is invalid format. It is only available for `-c --create -d --downcase`'
-
     OptionParseError = Class.new(ArgumentError)
+
+    ERROR_MSG = "Option is invalid format. options are only avaliable for `-c --create -d --downcase`"
 
     def initialize(argv)
       @argv = argv
@@ -21,17 +23,29 @@ module Space2underscore
     def start
       return $stdout.puts Usage.new.content if @argv.empty?
 
-      if with_all_flags?
+      op = OptionParser.new
+      op.on(*CREATE_FLAGS) do |v|
+        opts[:create] = v
+      end
+      op.on(*RAW_FLAGS) do |v|
+        opts[:string] = v
+      end
+
+      args = op.parse!(ARGV)
+
+      if args
         @executer.run_with_raw(@underscore_include_branch)
       elsif create_flags_without_raw_flags?
         @executer.run_with_downcase(@underscore_include_branch)
       elsif raw_flags_without_create_flags?
         @printer.run_with_raw(@underscore_include_branch)
-      elsif without_any_flags?
+      elsif invalid_options?
         @printer.run_with_downcase(@underscore_include_branch)
       else
-        raise OptionParseError, ERROR_MSG
+        $stderr.puts ERROR_MSG
       end
+    rescue OptionParser::InvalidOption => e
+      puts e.message
     end
 
     private
@@ -48,8 +62,7 @@ module Space2underscore
       !included?(flags)
     end
 
-    def without_any_flags?
-      not_included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
+    def invalid_options?
     end
 
     def with_all_flags?
