@@ -40,5 +40,6 @@ This is a command line tool. So DO NOT include space2underscore's module in othe
 If you include this module to your application, there is a possibility of crackers attacking.
 
 ## Credits
+
 - Help information based on [@motemen's ghq](https://github.com/motemen/ghq)
 - Installed information based on [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
