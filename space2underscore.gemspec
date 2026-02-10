@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'space2underscore/version'
 
@@ -14,7 +14,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/sachin21/space2underscore'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($RS)
+  spec.metadata = {
+    'bug_tracker_uri' => 'https://github.com/sachin21/space2underscore/issues',
+    'source_code_uri' => 'https://github.com/sachin21/space2underscore'
+  }
+
+  spec.files         = Dir.glob('{bin,lib}/**/*') + %w[README.md MIT-LICENSE CHANGELOG.md post_install_message.txt]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
@@ -26,5 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rubocop', '< 0.49.0'
+  spec.add_development_dependency 'rubocop', '~> 1.0'
 end
