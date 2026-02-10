@@ -1,15 +1,14 @@
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.7
+  NewCops: enable
 
   Exclude:
     - 'vendor/bundle/**/*'
 
-  DisplayCopNames: true
-
 Style/Documentation:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 100
 
 Metrics/MethodLength:
