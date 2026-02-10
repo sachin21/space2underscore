@@ -1,6 +1,6 @@
 # Space2underscore
 
-![Gem Version](https://badge.fury.io/rb/space2underscore.svg) [![Build Status](https://travis-ci.org/sachin21/space2underscore.svg?branch=master)](https://travis-ci.org/sachin21/space2underscore) [![Code Climate](https://codeclimate.com/github/sachin21/space2underscore/badges/gpa.svg)](https://codeclimate.com/github/sachin21/space2underscore) [![Coverage Status](https://coveralls.io/repos/sachin21/space2underscore/badge.svg?branch=master&service=github)](https://coveralls.io/github/sachin21/space2underscore?branch=master) [![Gem](https://img.shields.io/gem/dt/space2underscore.svg)](https://rubygems.org/gems/space2underscore)
+![Gem Version](https://badge.fury.io/rb/space2underscore.svg) [![CI](https://github.com/sachin21/space2underscore/workflows/CI/badge.svg)](https://github.com/sachin21/space2underscore/actions) [![Code Climate](https://codeclimate.com/github/sachin21/space2underscore/badges/gpa.svg)](https://codeclimate.com/github/sachin21/space2underscore) [![Coverage Status](https://coveralls.io/repos/sachin21/space2underscore/badge.svg?branch=master&service=github)](https://coveralls.io/github/sachin21/space2underscore?branch=master) [![Gem](https://img.shields.io/gem/dt/space2underscore.svg)](https://rubygems.org/gems/space2underscore)
 
 ## What is space2underscore
 
@@ -34,7 +34,7 @@ Run with `--create` or `-c` options.
 $ git branch -m $(s2u renamed branch)
 ```
 
-## !! Cation !!
+## !! Caution !!
 
 This is a command line tool. So DO NOT include space2underscore's module in other Ruby application because it uses `system` command.
 If you include this module to your application, there is a possibility of crackers attacking.
