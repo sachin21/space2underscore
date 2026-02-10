@@ -22,9 +22,9 @@ module Space2underscore
       return $stdout.puts Usage.new.content if @argv.empty?
 
       if with_all_flags?
-        @executer.run_with_raw(@underscore_include_branch)
+        BranchCreator.create(@underscore_include_branch)
       elsif create_flags_without_raw_flags?
-        @executer.run_with_downcase(@underscore_include_branch)
+        BranchCreator.create(@underscore_include_branch.downcase)
       elsif raw_flags_without_create_flags?
         @printer.run_with_raw(@underscore_include_branch)
       elsif without_any_flags?

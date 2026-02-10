@@ -7,6 +7,7 @@ end
 require 'singleton'
 
 require 'space2underscore/version'
+require 'space2underscore/branch_creator'
 require 'space2underscore/executor'
 require 'space2underscore/printer'
 require 'space2underscore/underscore'
