@@ -1,67 +1,40 @@
 # frozen_string_literal: true
 
 module Space2underscore
+  # Main CLI orchestrator
   class Cli
-    CREATE_FLAGS = %w[-c --create].freeze
-    RAW_FLAGS = %w[-r --raw].freeze
-
-    FLAGS = [CREATE_FLAGS, RAW_FLAGS].flatten.freeze
-
-    ERROR_MSG = 'Option is invalid format. It is only available for `-c --create -d --downcase`'
-
-    OptionParseError = Class.new(ArgumentError)
-
     def initialize(argv)
       @argv = argv
-      @underscore_include_branch = Underscore.new(branch).convert
-      @executer = Executor.instance
-      @printer  = Printer.instance
     end
 
     def start
-      return $stdout.puts Usage.new.content if @argv.empty?
+      options = OptionsParser.parse(@argv)
 
-      if with_all_flags?
-        BranchCreator.create(@underscore_include_branch)
-      elsif create_flags_without_raw_flags?
-        BranchCreator.create(@underscore_include_branch.downcase)
-      elsif raw_flags_without_create_flags?
-        @printer.run_with_raw(@underscore_include_branch)
-      elsif without_any_flags?
-        @printer.run_with_downcase(@underscore_include_branch)
-      else
-        raise OptionParseError, ERROR_MSG
+      # Show usage if no arguments
+      return display_usage unless options
+
+      # Convert input to branch name
+      branch_name = Converter.convert(options.input)
+
+      # Apply case transformation
+      branch_name = branch_name.downcase if options.downcase
+
+      # Execute action
+      case options.action
+      when :create
+        BranchCreator.create(branch_name)
+      when :print
+        OutputPrinter.print(branch_name)
       end
+    rescue OptionsParser::ParseError => e
+      $stderr.puts "Error: #{e.message}"
+      exit 1
     end
 
     private
 
-    def branch
-      @argv.reject { |arg| FLAGS.include?(arg) }
-    end
-
-    def included?(flags)
-      @argv.any? { |arg| flags.include?(arg) }
-    end
-
-    def not_included?(flags)
-      !included?(flags)
-    end
-
-    def without_any_flags?
-      not_included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
-    end
-
-    def with_all_flags?
-      included?(CREATE_FLAGS) && included?(RAW_FLAGS)
-    end
-
-    def create_flags_without_raw_flags?
-      included?(CREATE_FLAGS) && not_included?(RAW_FLAGS)
-    end
-
-    def raw_flags_without_create_flags?
-      included?(RAW_FLAGS) && not_included?(CREATE_FLAGS)
+    def display_usage
+      $stdout.puts Usage.new.content
     end
   end
 end
