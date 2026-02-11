@@ -1,5 +1,20 @@
 # Space2underscore Change Log
 
+## v0.6.1
+- Bump minimum Ruby version to 2.7.
+- Migrate from Travis CI to GitHub Actions.
+- Modernize gem specification.
+- Update RuboCop configuration with modern settings.
+- Remove version constraint from Coveralls.
+- Improve README with clearer structure and formatting.
+
+## v0.6.0
+- Fix command injection vulnerability in Executor.
+- Simplify architecture and remove Singleton pattern.
+- Replace duplicate s2u with symlink.
+- Add project configuration file.
+- Fix typos in documentation.
+
 ## v0.5.2
 - Refactor methods in space2underscore.
 - Refactor examples for space2underscore.
